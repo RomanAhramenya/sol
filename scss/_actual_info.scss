@@ -1,0 +1,53 @@
+.actual-info {
+  margin-bottom: 50px;
+  h2 {
+    margin-bottom: 50px;
+    font-weight: 600;
+    text-align: center;
+  }
+  p,
+  li {
+    line-height: 1.2em;
+    font-size: 16px;
+  }
+  p,
+  ul {
+    margin-bottom: 20px;
+    list-style: disc;
+  }
+  .italy {
+    list-style: decimal;
+    font-style: italic;
+  }
+  h3 {
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  .images_left {
+    float: left;
+    margin-right: 10px;
+  }
+  .images_right {
+    float: right;
+    margin-left: 10px;
+  }
+  img {
+    width: 300px;
+    height: auto;
+  }
+}
+
+@include for-phone-only {
+  .actual-info {
+    .images_left {
+      float: none;
+      margin-right: 0;
+      text-align: center;
+    }
+    .images_right {
+      float: none;
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+}

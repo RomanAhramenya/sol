@@ -1,0 +1,16 @@
+$breakpoints: (
+  "for-phone-only": 768px,
+  "for-desktop-up": 1200px,
+);
+
+@mixin for-phone-only {
+  @media (max-width: map-get($breakpoints, "for-phone-only")) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: map-get($breakpoints, "for-desktop-up")) {
+    @content;
+  }
+}

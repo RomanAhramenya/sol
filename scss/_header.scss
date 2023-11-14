@@ -1,0 +1,115 @@
+.header {
+  background-image: url("./../assets/images/background-logo.jpg");
+  background-size: cover;
+  color: white;
+  @include adaptiv-value("padding-top", 24, 51);
+  margin-bottom: 50px;
+  header {
+    padding: 0 2.5%;
+    background: rgba(15, 23, 42, 0.8);
+    .header_logo {
+      padding: 10px 0;
+      @include flex($justify: start);
+
+      &__image {
+        max-width: 170px;
+        margin-right: 30px;
+        #header_logo {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      &__text {
+        text-shadow: 1px 1px 30px black;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        font-size: 16px;
+        line-height: 1.2em;
+        text-align: center;
+      }
+    }
+
+    nav {
+      font-size: 14px;
+      text-align: center;
+      @include flex;
+
+      div {
+        text-align: center;
+        padding: 10px 10px;
+
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        a {
+          color: inherit;
+          text-shadow: 1px 1px 30px black;
+          font-weight: 300;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+        &:hover {
+          color: #3c74ff;
+          background: rgba(128, 128, 128, 0.1);
+        }
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+  &_info {
+    font-size: 14px;
+    display: flex;
+    padding: 0 0 10px 0;
+    div {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+
+      &:hover a {
+        color: #3c74ff;
+      }
+      &:hover svg {
+        fill: #3c74ff;
+      }
+    }
+
+    svg {
+      transition: all 0.2s ease;
+      fill: white;
+      margin-right: 5px;
+      width: 30px;
+      height: 30px;
+    }
+    a {
+      transition: all 0.2s ease;
+      color: inherit;
+      letter-spacing: 0.1em;
+    }
+  }
+}
+
+@include for-phone-only {
+  .header {
+    header {
+      .header_logo {
+        padding: 20px 0 20px;
+        justify-content: center;
+      }
+      nav {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+    &_info {
+      display: block;
+      .header_info__email,
+      .header_info__tel,
+      .header_info__location {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

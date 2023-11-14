@@ -1,0 +1,84 @@
+// Colors
+$colorMain: black;
+$colorBackgroundMain: rgba(128, 128, 128, 0.123);
+$colorLogo: #3c74ff;
+$colorMainLighter: #f6f0f8;
+$colorGrey: #d5d5d5;
+
+// Fonts
+$fontMain: "Fira Sans", sans-serif;
+$fontSecondary: "Assistant";
+$fontMainColor: $colorMain;
+$fontMainSize: 24px;
+
+@mixin adaptiv-value($property, $minSize, $maxSize) {
+  @if $property == "padding" {
+    #{$property}: calc(
+        #{$minSize +
+          px} +
+          (#{$maxSize} - #{$minSize}) *
+          ((100vw - 390px) / (1600 - 390))
+      )
+      0;
+  } @else {
+    #{$property}: calc(
+      #{$minSize +
+        px} +
+        (#{$maxSize} - #{$minSize}) *
+        ((100vw - 390px) / (1600 - 390))
+    );
+  }
+}
+
+@mixin flex($justify: center, $align: center, $wrap: wrap, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+// @mixin button($color, $width, $minFontSize, $maxFontSize, $left: 0) {
+//   @include adaptiv-value("font-size", $minFontSize, $maxFontSize);
+//   font-weight: 300;
+//   padding: 8px;
+//   z-index: 1;
+//   cursor: pointer;
+//   color: $color;
+//   transition: all 0.25s ease;
+//   border: none;
+//   outline: 2px black;
+//   background: transparent;
+//   position: relative;
+//   left: $left;
+//   text-transform: uppercase;
+//   &::before {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     width: calc(100% + #{$width + px});
+//     height: 10px;
+//     border-top: 1px solid $color;
+//     border-left: 1px solid $color;
+//     border-right: 1px solid $color;
+//     left: -#{$width / 2 + px};
+//     top: 0px;
+//     border-radius: 60px 60px 0 0;
+//   }
+//   &::after {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     width: calc(100% + #{$width + px});
+//     height: 10px;
+//     border-left: 1px solid $color;
+//     border-right: 1px solid $color;
+//     border-bottom: 1px solid $color;
+//     left: -#{$width/2 + px};
+//     bottom: 0px;
+//     border-radius: 0 0 60px 60px;
+//   }
+//   &:hover {
+//     opacity: 0.5;
+//   }
+// }
